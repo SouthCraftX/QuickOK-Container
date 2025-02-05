@@ -18,7 +18,7 @@ extern "C" {
 /// #    define QO_CONTAINER_REGISTERED(QO_FWList , YourDataType)
 /// #endif
 /// @endcode
-#define QO_REGISTER_FWLIST_TYPE(_T_element)                              \
+#define QO_REGISTER_FWLIST(_T_element)                              \
     struct _QO_FWListNode_##_T_element \
     {    \
         _T_element      data; \
@@ -27,7 +27,7 @@ extern "C" {
     typedef struct _QO_FWListNode_##_T_element QO_FWListNode_##_T_element; \
     struct _QO_FWList_##_T_element               \
     {                                          \
-        qo_size_t       element_count;         \
+        qo_size_t                       element_count;         \
         QO_FWListNode_##_T_element *    head;  \               
         QO_FWListNode_##_T_element *    tail;  \   
         QO_FWListNode_##_T_element *    current; \
